@@ -20,17 +20,17 @@ public class PubController {
     }
 
     @RequestMapping(value = "pubs", method = RequestMethod.POST)
-    public Pub addNote(@RequestBody Pub note){
-        return repository.saveAndFlush(note);
+    public Pub addPub(@RequestBody Pub pub){
+        return repository.saveAndFlush(pub);
     }
 
     @RequestMapping(value = "pubs/", method = RequestMethod.GET)
-    public Pub getNote(@PathVariable Long id){
+    public Pub getPub(@PathVariable Long id){
         return repository.findOne(id);
     }
 
-    @RequestMapping(value = "pubs/{name}", method = RequestMethod.DELETE)
-    public Pub deleteNote(@PathVariable Long id){
+    @RequestMapping(value = "pubs/{id}", method = RequestMethod.DELETE)
+    public Pub deletePub(@PathVariable Long id){
         Pub existing = repository.findOne(id);
         repository.delete(existing);
         return existing;
