@@ -33,7 +33,6 @@ public class Pub{
     public String getOrderTotal() {
         return ordertotal;
     }
-
     public void setOrderTotal(String ordertotal) {
         this.ordertotal = ordertotal;
     }
