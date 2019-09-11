@@ -29,6 +29,7 @@ public class PubController {
         return repository.findOne(id);
     }
 
+
     @RequestMapping(value = "pubs/{id}", method = RequestMethod.DELETE)
     public Pub deletePub(@PathVariable Long id){
         Pub existing = repository.findOne(id);
