@@ -3,7 +3,7 @@ package com.qa.controllers;
 import com.qa.repository.PubRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.qa.models.Pub;
+import com.qa.models.Pubs;
 
 import java.util.List;
 
@@ -14,23 +14,23 @@ public class PubsController {
     private PubRepository repository;
 
     @RequestMapping(value = "publist", method = RequestMethod.GET)
-    public List<Pub> listAllPubs() {
+    public List<Pubs> listAllPubs() {
         return repository.findAll();
     }
 
     @RequestMapping(value = "publist", method = RequestMethod.POST)
-    public Pub addPub(@RequestBody Pub pub) {
+    public Pubs addPub(@RequestBody Pubs pub) {
         return repository.saveAndFlush(pub);
     }
 
     @RequestMapping(value = "publist/", method = RequestMethod.GET)
-    public Pub getPub(@PathVariable Long id) {
+    public Pubs getPub(@PathVariable Long id) {
         return repository.findOne(id);
     }
 
     @RequestMapping(value = "publist/{id}", method = RequestMethod.DELETE)
-    public Pub deletePub(@PathVariable Long id) {
-        Pub existing = repository.findOne(id);
+    public Pubs deletePub(@PathVariable Long id) {
+        Pubs existing = repository.findOne(id);
         repository.delete(existing);
         return existing;
     }
