@@ -1,6 +1,6 @@
 package com.qa.controllers;
 
-import com.qa.repository.PubsRepository;
+import com.qa.repository.PubRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.qa.models.Pub;
@@ -11,7 +11,7 @@ import java.util.List;
 @CrossOrigin
 public class PubsController {
     @Autowired
-    private PubsRepository repository;
+    private PubRepository repository;
 
     @RequestMapping(value = "publist", method = RequestMethod.GET)
     public List<Pub> listAllPubs() {
