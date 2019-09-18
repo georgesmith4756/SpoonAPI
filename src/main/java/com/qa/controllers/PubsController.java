@@ -16,6 +16,7 @@ public class PubsController {
     @RequestMapping(value = "publist", method = RequestMethod.GET)
     public List<Pubs> listAllPubs() {
         return repository.findAll();
+
     }
 
     @RequestMapping(value = "publist", method = RequestMethod.POST)
@@ -33,5 +34,10 @@ public class PubsController {
         Pubs existing = repository.findOne(id);
         repository.delete(existing);
         return existing;
+    }
+
+    @RequestMapping(value = "pubcount", method = RequestMethod.GET)
+    public Long countPubs() {
+       return repository.count();
     }
 }
