@@ -6,8 +6,10 @@ import javax.persistence.*;
 @Table(name="pubs")
 public class Pubs {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
     String pub;
 
     public String getPub() {
@@ -18,5 +20,12 @@ public class Pubs {
         this.pub = pub;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
 }

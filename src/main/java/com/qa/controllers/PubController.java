@@ -36,4 +36,9 @@ public class PubController {
         repository.delete(existing);
         return existing;
     }
+
+    @RequestMapping(value = "entrycount", method = RequestMethod.GET)
+    public Long countPubs() {
+        return repository.count();
+    }
 }
