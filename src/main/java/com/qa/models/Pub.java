@@ -8,6 +8,7 @@ public class Pub{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
     String pub;
     String username;
     String date;
