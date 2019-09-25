@@ -36,13 +36,13 @@ public class PubsController {
         return existing;
     }
 
-    @RequestMapping(value = "pubs/{id}",method = RequestMethod.PUT)
-    public Pubs updateProduct(@PathVariable Long id,@RequestBody Pubs pubs){
-        Pubs existing = repository.findOne(id);
-        existing.setPub(pubs.getPub());
-        repository.saveAndFlush(existing);
-        return existing;
-    }
+   // @RequestMapping(value = "pubs/{id}",method = RequestMethod.PUT)
+   // public Pubs updateProduct(@PathVariable Long id,@RequestBody Pubs pubs){
+   //     Pubs existing = repository.findOne(id);
+    //    existing.setPub(pubs.getPub());
+    //    repository.saveAndFlush(existing);
+    //    return existing;
+    //}
 
     @RequestMapping(value = "pubcount", method = RequestMethod.GET)
     public Long countPubs() {
