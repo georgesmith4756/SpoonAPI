@@ -37,8 +37,30 @@ public class PubController {
         return existing;
     }
 
+
+    @RequestMapping(value = "pubs/{id}",method = RequestMethod.PUT)
+    public Pub updateProduct(@PathVariable Long id,@RequestBody Pub pub){
+        Pub existing = repository.findOne(id);
+        existing.setPub(pub.getPub());
+        existing.setUsername(pub.getUsername());
+        existing.setDate(pub.getDate());
+        existing.setOrderTotal(pub.getOrderTotal());
+        existing.setPostcode(pub.getPostcode());
+        repository.saveAndFlush(existing);
+        return existing;
+    }
+
     @RequestMapping(value = "entrycount", method = RequestMethod.GET)
     public Long countPubs() {
         return repository.count();
     }
+
+    @RequestMapping(value = "getunique/{username}", method = RequestMethod.GET)
+    public Long findByUsername(@PathVariable String username) {
+        return repository.count();
+    }
+
+
+
+
 }
