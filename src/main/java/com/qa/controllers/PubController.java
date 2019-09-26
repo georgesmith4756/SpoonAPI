@@ -2,6 +2,7 @@ package com.qa.controllers;
 
 import com.qa.repository.PubsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 import com.qa.models.Pub;
 
@@ -54,12 +55,16 @@ public class PubController {
         return repository.count();
     }
 
-    @RequestMapping(value = "getunique/{username}", method = RequestMethod.GET)
+
+
+    @RequestMapping(value = "getuniquepubs", method = RequestMethod.GET)
     public Long findByUsername(@PathVariable String username) {
         return repository.count();
     }
 
-
-
-
 }
+
+
+
+
+
