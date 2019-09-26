@@ -57,7 +57,7 @@ public class PubController {
 
 
 
-    @RequestMapping(value = "getuniquepubs", method = RequestMethod.GET)
+    @RequestMapping(value = "getuniquepubs/{username}", method = RequestMethod.GET)
     public Long findByUsername(@PathVariable String username) {
         return repository.count();
     }
