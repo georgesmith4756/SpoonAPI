@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PubsRepository extends JpaRepository<Pub, Long> {
 
-    @Query(value = "SELECT COUNT(DISTINCT pub) FROM entries WHERE username = ?1", nativeQuery = true)
+    @Query(value = "SELECT COUNT(DISTINCT pub) FROM entries WHERE username = :username", nativeQuery = true)
     Long findByUsername(String username);
 
 
