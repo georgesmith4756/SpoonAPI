@@ -10,8 +10,6 @@ import java.util.List;
 
 public interface PubRepository extends JpaRepository<Pubs, Long> {
 
-    @Query(value = "SELECT COUNT(DISTINCT pub) FROM entries WHERE username = :username", nativeQuery = true)
-    Long findByUsername(@Param("username") String username);
 
 }
 

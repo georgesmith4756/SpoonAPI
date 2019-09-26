@@ -15,6 +15,14 @@ public class Pub{
     String ordertotal;
     String postcode;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -53,6 +61,8 @@ public class Pub{
     public void setPub(String pub) {
         this.pub = pub;
     }
+
+
 
 
 
