@@ -36,14 +36,10 @@ public class PubControllerTest {
     }
 
     @Test
-    public void testGetAllNotes(){
+    public void testGetAllEntries(){
         List<Pub> pubsList = new ArrayList<>();
-        Pub pub = new Pub();
-        pub.setUsername("fwefwe@wfwef.com");
-        pub.setDate("Friday, January 25, 2019");
-        pub.setPostcode("BR13BE");
-        pub.setPub("The QA Tavern");
-        pub.setOrderTotal("7.98");
+        Pub pub = new Pub("The QA Tavern","testusername","Friday, January 25, 2019","7.98","BR13BE");
+
         pubController.listAllPubs();
     }
     @Test

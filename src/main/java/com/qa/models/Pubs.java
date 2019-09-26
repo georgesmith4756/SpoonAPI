@@ -10,8 +10,17 @@ public class Pubs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String pub;
+    private Long id;
+    private String pub;
+
+    public Pubs(String pub){
+        this.pub = pub;
+    }
+
+    public Pubs(Long id, String pub){
+        this.id = id;
+        this.pub = pub;
+    }
 
     public String getPub() {
         return pub;
