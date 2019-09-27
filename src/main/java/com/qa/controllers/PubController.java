@@ -17,19 +17,12 @@ public class PubController {
     @RequestMapping(value = "pubs", method = RequestMethod.GET)
     public List<Pub> listAllPubs(){
         return repository.findAll();
-
     }
 
     @RequestMapping(value = "pubs", method = RequestMethod.POST)
     public Pub addPub(@RequestBody Pub pub){
         return repository.saveAndFlush(pub);
     }
-
-    @RequestMapping(value = "pubs/", method = RequestMethod.GET)
-    public Pub getPub(@PathVariable Long id){
-        return repository.findOne(id);
-    }
-
 
     @RequestMapping(value = "pubs/{id}", method = RequestMethod.DELETE)
     public Pub deletePub(@PathVariable Long id){
@@ -51,20 +44,6 @@ public class PubController {
         return existing;
     }
 
-    @RequestMapping(value = "entrycount", method = RequestMethod.GET)
-    public Long countPubs() {
-        return repository.count();
-    }
-
-
-    @RequestMapping(value = "getuniquepubs/{username}", method = RequestMethod.GET)
-    public Long findUniquePubs(@PathVariable String username) {
-        return repository.findByUsername(username);
-    }
-
 }
-
-
-
 
 

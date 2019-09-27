@@ -24,10 +24,7 @@ public class PubsController {
         return repository.saveAndFlush(pub);
     }
 
-    @RequestMapping(value = "publist/", method = RequestMethod.GET)
-    public Pubs getPub(@PathVariable Long id) {
-        return repository.findOne(id);
-    }
+
 
     @RequestMapping(value = "publist/{id}", method = RequestMethod.DELETE)
     public Pubs deletePub(@PathVariable Long id) {

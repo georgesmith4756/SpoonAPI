@@ -8,12 +8,29 @@ public class Pub{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String pub;
-    String username;
-    String date;
-    String ordertotal;
-    String postcode;
+    private Long id;
+    private String pub;
+    private String username;
+    private String date;
+    private String ordertotal;
+    private String postcode;
+
+    public Pub(String pub, String username, String date, String ordertotal, String postcode){
+        this.pub = pub;
+        this.username = username;
+        this.date = date;
+        this.ordertotal = ordertotal;
+        this.postcode = postcode;
+    }
+
+    public Pub(Long id, String pub, String username, String date, String ordertotal, String postcode){
+        this.id = id;
+        this.pub = pub;
+        this.username = username;
+        this.date = date;
+        this.ordertotal = ordertotal;
+        this.postcode = postcode;
+    }
 
     public Long getId() {
         return id;
