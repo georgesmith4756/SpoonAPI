@@ -14,6 +14,10 @@ public class Pub{
     private String date;
     private String ordertotal;
     private String postcode;
+    
+    public Pub(){
+        
+    }
 
     public Pub(String pub, String username, String date, String ordertotal, String postcode){
         this.pub = pub;
