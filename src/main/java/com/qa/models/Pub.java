@@ -23,6 +23,15 @@ public class Pub{
         this.postcode = postcode;
     }
 
+    public Pub(Long id, String pub, String username, String date, String ordertotal, String postcode){
+        this.id = id;
+        this.pub = pub;
+        this.username = username;
+        this.date = date;
+        this.ordertotal = ordertotal;
+        this.postcode = postcode;
+    }
+
     public Long getId() {
         return id;
     }

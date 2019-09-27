@@ -72,9 +72,6 @@ public class PubsControllerTest {
 
         when(repository.saveAndFlush(pub)).thenReturn(pub);
         assertEquals(pubsController.addPub(pub).getPub(),"The QA Tavern");
-
-
-
     }
 
     @Test
